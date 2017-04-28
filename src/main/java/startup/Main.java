@@ -1,8 +1,10 @@
 package main.java.startup;
 
 import main.java.controller.Controller;
+import main.java.integration.CardTerminal;
 import main.java.integration.DatabaseManager;
 import main.java.view.View;
+import se.kth.iv1350.garage.Garage;
 
 /**
  * Starts the application.
@@ -14,8 +16,10 @@ public class Main {
      * @param args The are no command line parameters.
      */
     public static void main(String[] args) {
-        DatabaseManager dbMgr = new DatabaseManager();
-        Controller contr = new Controller(dbMgr);
+        Garage GRG = new Garage();
+        DatabaseManager DM = new DatabaseManager();
+        CardTerminal CT = new CardTerminal();
+        Controller contr = new Controller(DM, GRG, CT);
         View view = new View(contr);
         view.sampleExecution();
     }

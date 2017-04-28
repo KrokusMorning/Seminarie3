@@ -16,6 +16,8 @@ public class View {
      * Calls all system operations and prints the result to <code>System.out</code>.
      */
     public void sampleExecution() {
+        contr.newInspection();
+        contr.closeGarage();
         String regNo = "ABC123";
         int cost = contr.enterRegistrationNumber(regNo);
         System.out.println("The cost is:" + cost);
