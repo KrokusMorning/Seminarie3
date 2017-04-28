@@ -5,23 +5,39 @@ package main.java.model;
  */
 public class InspectionChecklist {
     private final Vehicle vehicle;
-    private final int costA = 10;
-    private final int costB = 20;
-    private final int costC = 30;
+    private  boolean inspectionA = false;
+    private  boolean inspectionB = false;
+    private  boolean inspectionC = false;
+
+    public boolean isInspectionA() {
+        return inspectionA;
+    }
+
+    public boolean isInspectionB() {
+        return inspectionB;
+    }
+
+    public boolean isInspectionC() {
+        return inspectionC;
+    }
 
     public InspectionChecklist(Vehicle vehicle) {
         this.vehicle = vehicle;
     }
 
-    public int getCostA() {
-        return costA;
+    public void setInspectionA(boolean inspectionA) {
+        this.inspectionA = inspectionA;
     }
 
-    public int getCostB() {
-        return costB;
+    public void setInspectionB(boolean inspectionB) {
+        this.inspectionB = inspectionB;
     }
 
-    public int getCostC() {
-        return costC;
+    public void setInspectionC(boolean inspectionC) {
+        this.inspectionC = inspectionC;
     }
+
+
+
+
 }

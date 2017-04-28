@@ -12,7 +12,13 @@ public class Inspection {
         this.inspections = insList;
     }
     public int calculateCost(){
-        int cost = inspections.getCostA() + inspections.getCostB() + inspections.getCostC();
+        int cost = 0;
+        if (!inspections.isInspectionA())
+            cost += 10;
+        if (!inspections.isInspectionB())
+            cost += 15;
+        if (!inspections.isInspectionC())
+            cost += 20;
         return cost;
     }
 }

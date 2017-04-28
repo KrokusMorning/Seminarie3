@@ -14,9 +14,10 @@ public class CardTerminal {
         this.PA = PA;
     }
 
-    public void cardPayment(CreditCard creditCard, int payedAmount, int cost){
+    public CardReceipt cardPayment(CreditCard creditCard, int payedAmount, int cost){
         PA.authorizePayment(creditCard, payedAmount);
         CardReceipt receipt = new CardReceipt(cost, payedAmount);
+        return receipt;
 
 
     }
