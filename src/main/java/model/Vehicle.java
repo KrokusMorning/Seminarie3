@@ -4,11 +4,17 @@ package main.java.model;
  */
 public class Vehicle {
     private final String regNo;
+
+    public String getRegNo() {
+        return regNo;
+    }
+
     /**
      * Creates a vehicle with the specified registration number.
      *
      * @param regNo The registration number of the newly created vehicle.
      */
+
 
     public Vehicle(String regNo) {
         this.regNo = regNo;

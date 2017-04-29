@@ -9,6 +9,10 @@ public class InspectionChecklist {
     private  boolean inspectionB = false;
     private  boolean inspectionC = false;
 
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
     public boolean isInspectionA() {
         return inspectionA;
     }

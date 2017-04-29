@@ -20,9 +20,9 @@ public class Main {
      */
     public static void main(String[] args) {
         Garage GRG = new Garage();
-        DatabaseManager DM = new DatabaseManager();
         PaymentAuthorization PA = new PaymentAuthorization();
         Printer PRTR = new Printer();
+        DatabaseManager DM = new DatabaseManager(PRTR);
         CardTerminal CT = new CardTerminal(PA);
         Payment payment = new Payment(PRTR, CT);
         Controller contr = new Controller(DM, GRG, payment);

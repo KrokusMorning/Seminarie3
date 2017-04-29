@@ -7,6 +7,7 @@ import main.java.model.InspectionChecklist;
 import main.java.model.Payment;
 import main.java.model.Vehicle;
 import se.kth.iv1350.garage.Garage;
+import se.kth.iv1350.payauth.CreditCard;
 
 import java.time.YearMonth;
 import java.util.Date;
@@ -39,20 +40,15 @@ public class Controller {
 
     }
 
-    public void payWithCard(int pin, String number, String holder, YearMonth expiryDate, int CVC, int payedAmount, int cost){
-        payment.cardPayment(pin, number, holder, expiryDate, CVC, payedAmount, cost);
+    public void payWithCard(CreditCard creditCard, int payedAmount, int cost){
+        payment.cardPayment(creditCard, payedAmount, cost);
     }
 
-    public void whatInspectRequest(boolean specInspectionResult, InspectionChecklist inspections){
-        if(!inspections.isInspectionA()){
-            inspections.setInspectionA(specInspectionResult);
-            return;}
-        if(!inspections.isInspectionB()){
-            inspections.setInspectionB(specInspectionResult);
-            return;}
-        if(!inspections.isInspectionC()){
-            inspections.setInspectionC(specInspectionResult);
-            return;}
+    public void whatInspectRequest(boolean specInspectionResult, InspectionChecklist inspections, Vehicle vehicle){
+        DM.updateSpecResult(specInspectionResult, inspections, vehicle);
     }
 
+    public void inspectionsCompleted(Vehicle vehicle, InspectionChecklist inspections){
+        DM.inspectionsCompleted(vehicle, inspections);
+    }
 }

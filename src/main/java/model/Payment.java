@@ -18,8 +18,8 @@ public class Payment {
         this.CT = CT;
     }
 
-    public void cardPayment(int pin, String number, String Holder, YearMonth expiryDate, int CVC, int payedAmount, int cost){
-        CreditCard creditCard = new CreditCard(pin, number, Holder, expiryDate, CVC);
+    public void cardPayment(CreditCard creditCard, int payedAmount, int cost){
+
         CardReceipt receipt = CT.cardPayment(creditCard, payedAmount, cost);
         PRTR.printCardReceipt(receipt);
 
