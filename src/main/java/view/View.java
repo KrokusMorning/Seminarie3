@@ -39,7 +39,7 @@ public class View {
 
         CreditCard creditCard = new CreditCard(pin, number, holder, expiryDate, CVC);
         contr.payWithCard(creditCard, payedAmount, cost);
-        //boolean
+
         boolean specInspectionResult = true;
         for(int i = 0; i < 4; i++) {
             System.out.println();

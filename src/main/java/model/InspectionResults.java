@@ -1,7 +1,8 @@
 package main.java.model;
 
 /**
- * Created by ocean on 2017-04-29.
+ * Class representing the final result of the inspection.
+ * The results of all tests are presented and a final result is generated.
  */
 public class InspectionResults {
     private final Vehicle vehicle;

@@ -5,6 +5,10 @@ package main.java.model;
 public class Vehicle {
     private final String regNo;
 
+    /**
+     *
+     * @return registration number of vehicle.
+     */
     public String getRegNo() {
         return regNo;
     }

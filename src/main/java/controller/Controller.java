@@ -13,7 +13,7 @@ import java.time.YearMonth;
 import java.util.Date;
 
 /**
- * Created by ocean on 2017-04-27.
+ * The controller class handles all calls from the View.
  */
 public class Controller {
     private DatabaseManager DM;

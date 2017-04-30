@@ -5,7 +5,7 @@ import main.java.model.Vehicle;
 import main.java.model.InspectionResults;
 
 /**
- * Created by ocean on 2017-04-27.
+ * Class responsible for database calls.
  */
 public class DatabaseManager {
     private Printer PRTR;

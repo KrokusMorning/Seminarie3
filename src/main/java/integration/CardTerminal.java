@@ -5,7 +5,7 @@ import se.kth.iv1350.payauth.CreditCard;
 import se.kth.iv1350.payauth.PaymentAuthorization;
 
 /**
- * Created by ocean on 2017-04-27.
+ * The class represent a card terminal.
  */
 public class CardTerminal {
     private final PaymentAuthorization PA;
