@@ -23,10 +23,11 @@ public class View {
     public void sampleExecution() {
         contr.newInspection();
         contr.closeGarage();
+
         String regNo = "FXO419";
         Vehicle vehicle = new Vehicle(regNo);
-        InspectionChecklist inspections = new InspectionChecklist(vehicle);
-        int cost = contr.enterRegistrationNumber(vehicle, inspections);
+        InspectionChecklist checklist = new InspectionChecklist(vehicle);
+        int cost = contr.costForInspection(vehicle, checklist);
         System.out.println("\n" + "Cost for inspection: " + cost + "$" + "\n");
 
         int pin = 1337;
@@ -43,12 +44,12 @@ public class View {
         for(int i = 0; i < 4; i++) {
             System.out.println();
             System.out.println("Inspection Checklist Turn " + (i+1));
-            System.out.println("InspectionA OK: " + inspections.isInspectionA());
-            System.out.println("InspectionB OK: " + inspections.isInspectionB());
-            System.out.println("InspectionC OK: " + inspections.isInspectionC());
-            contr.whatInspectRequest(specInspectionResult, inspections, vehicle);
+            System.out.println("InspectionA OK: " + checklist.isInspectionA());
+            System.out.println("InspectionB OK: " + checklist.isInspectionB());
+            System.out.println("InspectionC OK: " + checklist.isInspectionC());
+            contr.whatInspectRequest(specInspectionResult, checklist, vehicle);
         }
-        contr.inspectionsCompleted(vehicle, inspections);
+        contr.inspectionsCompleted(vehicle, checklist);
 
     }
 }

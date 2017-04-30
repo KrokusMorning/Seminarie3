@@ -14,8 +14,6 @@ public class Vehicle {
      *
      * @param regNo The registration number of the newly created vehicle.
      */
-
-
     public Vehicle(String regNo) {
         this.regNo = regNo;
     }

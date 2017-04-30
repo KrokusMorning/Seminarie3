@@ -8,29 +8,64 @@ public class InspectionResults {
     private String inspectionA = "FAIL";
     private String inspectionB = "FAIL";
     private String inspectionC = "FAIL";
+    private String finalResult = "FAIL";
 
+
+    /**
+     *
+     * @return  The vehicle whos results are on the checklist.
+     */
     public Vehicle getVehicle() {
         return vehicle;
     }
 
-    public InspectionResults(Vehicle vehicle, InspectionChecklist inspections) {
+    /**
+     * Reads the results from the specified inspections and creates an instance of <code>InspectionResults</code>
+     * containing the results and generates a final result for the whole inspection.
+     *
+     * @param vehicle The vehicle being inspected.
+     * @param checklist Checklist telling what inspections to be done and which are done.
+     */
+    public InspectionResults(Vehicle vehicle, InspectionChecklist checklist) {
         this.vehicle = vehicle;
-        if(inspections.isInspectionA())
+        if(checklist.isInspectionA())
             this.inspectionA = "PASS";
-        if(inspections.isInspectionB())
+        if(checklist.isInspectionB())
             this.inspectionB = "PASS";
-        if(inspections.isInspectionC())
+        if(checklist.isInspectionC())
             this.inspectionC = "PASS";
+        if(checklist.isInspectionA() && checklist.isInspectionB() && checklist.isInspectionC())
+            this.finalResult = "PASS";
     }
 
+    /**
+     *
+     * @return  Result for whole inspection.
+     */
+    public String getFinalResult() {
+        return finalResult;
+    }
+
+    /**
+     *
+     * @return  result of <code>inspectionA</code>.
+     */
     public String getInspectionA() {
         return inspectionA;
     }
 
+    /**
+     *
+     * @return  result of <code>inspectionB</code>.
+     */
     public String getInspectionB() {
         return inspectionB;
     }
 
+    /**
+     *
+     * @return  result of <code>inspectionC</code>.
+     */
     public String getInspectionC() {
         return inspectionC;
     }

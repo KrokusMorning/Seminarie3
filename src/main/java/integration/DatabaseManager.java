@@ -10,30 +10,53 @@ import main.java.model.InspectionResults;
 public class DatabaseManager {
     private Printer PRTR;
 
+    /**
+     * Creates a new instance.
+     *
+     * @param PRTR  Printer to be used.
+     */
     public DatabaseManager(Printer PRTR) {
         this.PRTR = PRTR;
     }
 
+    /**
+     *
+     * @param vehicle The vehicle being inspected.
+     * @return  Checklist telling what inspections to be done and which are done-
+     */
     public  InspectionChecklist findInspectionsByVehicle(Vehicle vehicle){
-        InspectionChecklist inspections = new InspectionChecklist(vehicle);
-        return inspections;
+        InspectionChecklist checklist = new InspectionChecklist(vehicle);
+        return checklist;
     }
 
-    public void updateSpecResult(boolean specInspectionResult, InspectionChecklist inspections, Vehicle vehicle){
-        if(vehicle.getRegNo() == inspections.getVehicle().getRegNo()){
-        if(!inspections.isInspectionA()){
-            inspections.setInspectionA(specInspectionResult);
+    /** Checks that checklist of the correct vehicle is being updated and
+     * updates the <code>InspectionChecklist</code> with result for the specified inspection.
+     *
+     * @param specInspectionResult
+     * @param checklist Checklist telling what inspections to be done and which are done.
+     * @param vehicle The vehicle being inspected.
+     */
+    public void updateSpecResult(boolean specInspectionResult, InspectionChecklist checklist, Vehicle vehicle){
+        if(vehicle.getRegNo().equals(checklist.getVehicle().getRegNo())){
+        if(!checklist.isInspectionA()){
+            checklist.setInspectionA(specInspectionResult);
             return;}
-        if(!inspections.isInspectionB()){
-            inspections.setInspectionB(specInspectionResult);
+        if(!checklist.isInspectionB()){
+            checklist.setInspectionB(specInspectionResult);
             return;}
-        if(!inspections.isInspectionC()){
-            inspections.setInspectionC(specInspectionResult);
+        if(!checklist.isInspectionC()){
+            checklist.setInspectionC(specInspectionResult);
             return;}}
     }
 
-    public void inspectionsCompleted(Vehicle vehicle, InspectionChecklist inspections){
-        InspectionResults insRes = new InspectionResults(vehicle, inspections);
+    /**
+     * Creates a final inspection result and prints it.
+     *
+     * @param vehicle The vehicle being inspected.
+     * @param checklist Checklist telling what inspections to be done and which are done.
+     */
+    public void inspectionsCompleted(Vehicle vehicle, InspectionChecklist checklist){
+        InspectionResults insRes = new InspectionResults(vehicle, checklist);
         PRTR.printInspectionResults(insRes);
     }
 
