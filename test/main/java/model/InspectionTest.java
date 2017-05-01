@@ -31,21 +31,6 @@ class InspectionTest {
     }
 
     @Test
-    void testSetters() {
-        int expResult;
-        int result;
-        checklist.setInspectionA(true);
-        checklist.setInspectionB(true);
-        checklist.setInspectionC(true);
-        if(!checklist.isInspectionA() || !checklist.isInspectionB() || !checklist.isInspectionC())
-            result = 1;
-        else
-            result = 0;
-
-        expResult = 0;
-        assertEquals("One or more setters do not work. ", expResult, result);
-    }
-    @Test
     void testcalculateCost() {
         checklist.setInspectionA(true);
         checklist.setInspectionB(true);
