@@ -24,7 +24,7 @@ public class DatabaseManager {
      * @param vehicle The vehicle being inspected.
      * @return  Checklist telling what inspections to be done and which are done-
      */
-    public  InspectionChecklist findInspectionsByVehicle(Vehicle vehicle){
+    public InspectionChecklist findInspectionsByVehicle(Vehicle vehicle){
         InspectionChecklist checklist = new InspectionChecklist(vehicle);
         return checklist;
     }

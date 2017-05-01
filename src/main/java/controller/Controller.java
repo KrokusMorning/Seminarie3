@@ -1,6 +1,5 @@
 package main.java.controller;
 
-import main.java.integration.CardTerminal;
 import main.java.integration.DatabaseManager;
 import main.java.model.Inspection;
 import main.java.model.InspectionChecklist;
@@ -8,9 +7,6 @@ import main.java.model.Payment;
 import main.java.model.Vehicle;
 import se.kth.iv1350.garage.Garage;
 import se.kth.iv1350.payauth.CreditCard;
-
-import java.time.YearMonth;
-import java.util.Date;
 
 /**
  * The controller class handles all calls from the View.
@@ -54,7 +50,7 @@ public class Controller {
      * @param inspections   Instance specifying what inspections to be done for the vehicle.
      * @return    The cost for the inspections to be don for the vehicle.
      */
-    public int costForInspection( Vehicle vehicle, InspectionChecklist inspections ){
+    public int costForInspection(Vehicle vehicle, InspectionChecklist inspections ){
         Inspection currentInspection = new Inspection(vehicle, inspections);
         int cost = currentInspection.calculateCost(vehicle);
         return cost;
