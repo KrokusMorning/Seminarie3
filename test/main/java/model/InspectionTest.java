@@ -31,7 +31,7 @@ class InspectionTest {
     }
 
     @Test
-    void testcalculateCost() {
+    void testCalculateCost() {
         checklist.setInspectionA(true);
         checklist.setInspectionB(true);
         checklist.setInspectionC(false);
@@ -40,5 +40,19 @@ class InspectionTest {
         int result = checklist.getCost();
         assertEquals("Calculation of cost is faulty", expResult, result);
     }
+
+    @Test
+    void testCalculateCostWrongVehicle() {
+        Vehicle wrongVehicle = new Vehicle("CBA321");
+        checklist.setInspectionA(true);
+        checklist.setInspectionB(true);
+        checklist.setInspectionC(false);
+        int expResult = 0;
+        instance.calculateCost(wrongVehicle);
+        int result = checklist.getCost();
+        assertEquals("Vehicle verification is faulty", expResult, result);
+    }
+
+
 
 }
