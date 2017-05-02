@@ -8,6 +8,23 @@ public class InspectionChecklist {
     private  boolean inspectionA = false;
     private  boolean inspectionB = false;
     private  boolean inspectionC = false;
+    private  int cost;
+
+    /**
+     *
+     * @return the cost for all inspections.
+     */
+    public int getCost() {
+        return cost;
+    }
+
+    /**
+     *
+     * @param cost for all inspections.
+     */
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
 
     /**
      *

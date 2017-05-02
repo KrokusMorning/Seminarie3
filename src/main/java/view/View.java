@@ -26,19 +26,18 @@ public class View {
 
         String regNo = "FXO419";
         Vehicle vehicle = new Vehicle(regNo);
-        InspectionChecklist checklist = new InspectionChecklist(vehicle);
-        int cost = contr.costForInspection(vehicle, checklist);
-        System.out.println("\n" + "Cost for inspection: " + cost + "$" + "\n");
+        InspectionChecklist checklist = contr.costForInspection(vehicle);
+        System.out.println("\n" + "Cost for inspection: " + checklist.getCost() + "$" + "\n");
 
         int pin = 1337;
         String number = "199013121337";
         String holder = "Crank Cain";
         YearMonth expiryDate = YearMonth.of(2020, 12);
         int CVC = 333;
-        int payedAmount = cost;
+        int payedAmount = checklist.getCost();
 
         CreditCard creditCard = new CreditCard(pin, number, holder, expiryDate, CVC);
-        contr.payWithCard(creditCard, payedAmount, cost);
+        contr.payWithCard(creditCard, payedAmount, checklist.getCost());
 
         boolean specInspectionResult = true;
         for(int i = 0; i < 4; i++) {

@@ -36,7 +36,8 @@ class InspectionTest {
         checklist.setInspectionB(true);
         checklist.setInspectionC(false);
         int expResult = 20;
-        int result = instance.calculateCost(testVehicle);
+        instance.calculateCost(testVehicle);
+        int result = checklist.getCost();
         assertEquals("Calculation of cost is faulty", expResult, result);
     }
 

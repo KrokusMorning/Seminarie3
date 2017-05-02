@@ -19,11 +19,13 @@ public class Inspection {
     }
 
     /**
-     * Calculates the cost for all inspections necessary for the specific vehicle.
+     * Calculates the cost for all inspections necessary for the specific vehicle. Then updates
+     * the vehicles checklist with the cost.
      * @param vehicle The vehicle being inspected.
-     * @return The cost for all necessary inspections.
+     *
      */
-    public int calculateCost(Vehicle vehicle){
+
+    public void calculateCost(Vehicle vehicle){
         int cost = 0;
         if(vehicle.getRegNo().equals(this.vehicle.getRegNo())){
             if (!inspections.isInspectionA())
@@ -33,6 +35,6 @@ public class Inspection {
             if (!inspections.isInspectionC())
                 cost += 20;
         }
-        return cost;
+        inspections.setCost(cost);
     }
 }

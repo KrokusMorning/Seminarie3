@@ -50,11 +50,11 @@ public class Controller {
      * @param inspections   Instance specifying what inspections to be done for the vehicle.
      * @return    The cost for the inspections to be don for the vehicle.
      */
-    public int costForInspection(Vehicle vehicle, InspectionChecklist inspections ){
+    public InspectionChecklist costForInspection(Vehicle vehicle){
+        InspectionChecklist inspections = DM.findInspectionsByVehicle(vehicle);
         Inspection currentInspection = new Inspection(vehicle, inspections);
-        int cost = currentInspection.calculateCost(vehicle);
-        return cost;
-
+        currentInspection.calculateCost(vehicle);
+        return inspections;
     }
 
     /**
