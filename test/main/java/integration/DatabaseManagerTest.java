@@ -4,6 +4,7 @@ import main.java.model.Inspection;
 import main.java.model.InspectionChecklist;
 import main.java.model.InspectionResults;
 import main.java.model.Vehicle;
+import org.junit.Ignore;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -59,7 +60,7 @@ class DatabaseManagerTest {
         assertEquals("Method does not update result correctly.", expResult, result);
     }
 
-    @Test
+    @Ignore
     void testFindInspectionbyVehicle() {
         String expResult = checklist.getVehicle().getRegNo();
         InspectionChecklist testChecklist = DM.findInspectionsByVehicle(testVehicle);
